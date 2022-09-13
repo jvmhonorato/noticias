@@ -27,4 +27,11 @@ mongoose
 .then(()=> {
      app.listen(port, ()=> console.log('Server running...'))
 })
-.cacth(e => console.log(e))
+.catch(e => console.log(e))
+
+// const User = require('./models/user')
+// const user = new User({
+//     username: "victorhonorato",
+//     password: "abc123"
+// })
+user.save(()=>console.log('opa'))

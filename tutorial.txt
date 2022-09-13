@@ -1,7 +1,11 @@
 1: npm init -y
 
-2: npm install express ejs mongoose body-parser
+2: npm install express ejs mongoose body-parser b-crypt
 
-3:uasr template bootstrap
+3:usar template bootstrap contendo as pasta public/ js, css e pasta views com arquivos ejs
 
 4: criar mains index.js
+
+5: criar models/user.js usando o bcrypt pra criptografar o password
+
+6: usar o modelo de segurança bcrypt dentro do Schema em models/user.js, usando hash pra toda vez que salvar ja ter a senha criptografada 
