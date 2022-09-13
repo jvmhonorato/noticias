@@ -1,0 +1,7 @@
+1: npm init -y
+
+2: npm install express ejs mongoose body-parser
+
+3:uasr template bootstrap
+
+4: criar mains index.js
