@@ -8,4 +8,6 @@
 
 5: criar models/user.js usando o bcrypt pra criptografar o password
 
-6: usar o modelo de segurança bcrypt dentro do Schema em models/user.js, usando hash pra toda vez que salvar ja ter a senha criptografada 
+6: usar o modelo de segurança bcrypt dentro do Schema em models/user.js, usando hash pra toda vez que salvar ja ter a senha criptografada
+
+7: pra garantir que haja um usuário root em index.js criar modulo de criação de usuário createInitialUser()  ne tem uma condicional caso nao haja usuario ele cria um usuario automaticamente, e seguida chamar esse modulo no connect

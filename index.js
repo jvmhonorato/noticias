@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const User = require('./models/user')
 const app = express()
 const path = require('path')
 const port = process.env.PORT || 3000
@@ -20,18 +21,31 @@ app.set('view engine','ejs')
 app.get('/', (req, res)=> {
     res.render('index')
 })
+//CREATE USER    passa uma condicional de criação caso não tenha nenhum usuario criado ele cria um admin automaticamente
+const createInitialUser = async() => {
+    const total = await User.count({username: 'victorhonorato'})
+    if(total ==0){
+        const user = new User({
+            username: "victorhonorato",
+            password: "abc123"
+        })
+        await user.save()
+        console.log('User created')
+    }else{
+        console.log('user created skipped')
+    }
+}
 
 
 mongoose
 .connect(mongo, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(()=> {
+    createInitialUser()
      app.listen(port, ()=> console.log('Server running...'))
 })
 .catch(e => console.log(e))
 
-// const User = require('./models/user')
-// const user = new User({
-//     username: "victorhonorato",
-//     password: "abc123"
-// })
-user.save(()=>console.log('opa'))
+
+
+
+
