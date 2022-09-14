@@ -21,3 +21,13 @@
 11: criar a rota /login, o arquivo login.ejs criar formulário ou copiar do tailwind ou bootstrap adaptar ao projeto inserir o "name " pra comunicação do backend e tambem inserir no formulá o method="post" com o uso do body-parser pra enviar os dados ao banco de dados
 
 12: em models/ user.js criar o metodo checkPassword atrelado ao UserSchema usando a condicional e o compare, em seguida chamar o metodo em index no modulo post na rota app.use(./login) se a senha for verdadeiro o isValid será true e o redirect ira pra /noticia/restrito se for falsa será false i a pagina será redirecionada para /login novamente
+
+13: pra mostrar se o usuario está logado... criar um general middleware que garanti as variáveis dentro do restrito pra o user logado em index.js sem rotas pra abranger a todas 
+
+14:em views/partials/header substituir um dos elementos da navbar  add: <%- locals.user.username %> em un dos elementos <a> do navbar pra mostrar o nome do usuario depois criar uma condicional pra caso não esteja logado clicar no link da navbar "Entrar" com a rota pra o login
+
+15: estando em header.ejs configuramos a navbar pra traçar as rotas ao clicar nos links
+
+16: criar routes/auth.js tranferir modulos de autenticação pra la depois importar pra index 
+
+17 crair routes/pages.js
