@@ -1,6 +1,6 @@
 1: npm init -y
 
-2: npm install express ejs mongoose body-parser b-crypt
+2: npm install express ejs mongoose body-parser b-crypt express-session
 
 3:usar template bootstrap contendo as pasta public/ js, css e pasta views com arquivos ejs
 
@@ -11,3 +11,13 @@
 6: usar o modelo de segurança bcrypt dentro do Schema em models/user.js, usando hash pra toda vez que salvar ja ter a senha criptografada
 
 7: pra garantir que haja um usuário root em index.js criar modulo de criação de usuário createInitialUser()  ne tem uma condicional caso nao haja usuario ele cria um usuario automaticamente, e seguida chamar esse modulo no connect
+
+8: criar models/noticia.js com schema dde criação de noticia
+
+9: criar routes/noticias.js e routes/restrito.js  pra traçar a rota de noticia livre e noticias restritas
+
+10: pra limitar o acesso somente a restrito usar o express-session com a propriedade secret usuando ela como condicional na rota /restrito caso seja cessada depois da condicional no else usar o redirect pra rota /login
+
+11: criar a rota /login, o arquivo login.ejs criar formulário ou copiar do tailwind ou bootstrap adaptar ao projeto inserir o "name " pra comunicação do backend e tambem inserir no formulá o method="post" com o uso do body-parser pra enviar os dados ao banco de dados
+
+12: em models/ user.js criar o metodo checkPassword atrelado ao UserSchema usando a condicional e o compare, em seguida chamar o metodo em index no modulo post na rota app.use(./login) se a senha for verdadeiro o isValid será true e o redirect ira pra /noticia/restrito se for falsa será false i a pagina será redirecionada para /login novamente
