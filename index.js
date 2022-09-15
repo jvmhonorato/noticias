@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const User = require('./models/user')
 const noticias = require('./routes/noticias')
+const Noticia = require('./models/noticia')
 const restrito = require('./routes/restrito')
 const auth = require('./routes/auth')
 const pages = require('./routes/pages')
@@ -72,6 +73,19 @@ const createInitialUser = async() => {
     }else{
         console.log('user created skipped')
     }
+    const noticia = new Noticia({
+        title:'Noticia Publíca '+new Date().getTime(),
+        content: 'content',
+        category: 'public'
+    })
+    await noticia.save()
+    
+    const noticia2 = new Noticia({
+        title:'Noticia Privada 1'+new Date().getTime(),
+        content: 'content',
+        category: 'private'
+    })
+    await noticia2.save()
 }
 
 

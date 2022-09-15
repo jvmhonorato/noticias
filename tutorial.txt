@@ -30,4 +30,15 @@
 
 16: criar routes/auth.js tranferir modulos de autenticação pra la depois importar pra index 
 
-17 crair routes/pages.js
+17: crair routes/pages.js e alocar a rota principal la depois importar de volta em mains index.ja
+
+18: EM routes/noticias.js deixar o modulo asyncrono e da um find({}) pra renderizar em noticias/index, em seguida criar em views noticias/index.ejs e listar com <%%> as funções retornando asw noticias
+
+
+19: Em main index.js importa models/noticias e  adicionar no createInitalUser noticia publica e privada pra serem criadas automaticamente v
+
+NOTICIA PUBLICA
+20: pra filtra noticias publicas e privadas em routes/noticia incluimos no find o category: public outra alternativa foi deixada comentada usando um condiconal em routes/noticia
+
+NOTICIA PRIVADA 
+21: pra filtra noticia privada em routes/restrito incluimos no find o category: private, em seguida criar em views/noticia/restri.ejs pra carregar a renderização de noticias privadas
