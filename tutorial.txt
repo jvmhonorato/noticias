@@ -42,3 +42,10 @@ NOTICIA PUBLICA
 
 NOTICIA PRIVADA 
 21: pra filtra noticia privada em routes/restrito incluimos no find o category: private, em seguida criar em views/noticia/restri.ejs pra carregar a renderização de noticias privadas
+
+LOGOUT
+22: em routes/auth.js inserimo a rota logout com req.session.destroy() em seguida rum resdirect pra página principal, no header inserimos em um dos links <a> o Sair com a rota ./logout no dropdown
+
+23: tranferir o general middleware pra router/auth e mudei de app pra router, em seguida no index.js deixar o "app.use(auth)" antes do app.use(noticia) e app.use(restrito) pra que abranja todos os modulos
+
+24: tranferir tambem pra router/restrito o app.use(restrito)  e mudar app pra router e remover o '/restrito pra passar pelo middleware'

@@ -35,28 +35,13 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }))
-//middleware general
-app.use((req, res, next)=> {
-    if('user' in req.session){
-        res.locals.user = req.session.user
-    }
-    next()
-})
 
-
-app.use('/restrito', (req, res, next)=> {
-    if('user' in req.session){
-        return next()
-    }
-    res.redirect('/login')
-   
-})
-
+app.use('/', auth)
+app.use('/', pages)
 
 app.use('/noticias', noticias)
 app.use('/restrito', restrito)
-app.use('/', auth)
-app.use('/', pages)
+
 
 
 
