@@ -49,18 +49,18 @@ app.use('/admin', admin)
 
 //CREATE USER    passa uma condicional de criação caso não tenha nenhum usuario criado ele cria um admin automaticamente
 const createInitialUser = async() => {
-    const total = await User.count({username: 'victorhonorato'})
-    if(total ===0){
+    const total = await User.count({})
+    if(total === 0){
         const user = new User({
             username: "user1",
             password: "1234",
-            role:['restrito', 'admin']
+            roles:['restrito', 'admin']
         })
         await user.save()
         const user2 = new User({
             username: "user2",
             password: "1234",
-            role:['restrito']
+            roles:['restrito']
         })
         await user2.save()
 

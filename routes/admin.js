@@ -9,7 +9,7 @@ router.use((req, res, next)=> {
     //check if is logged
     if('user' in req.session){
         //check if has a role 'admin' into the user 
-        if(req.session.user.role.indexOf('admin')>=0){
+        if(req.session.user.roles.indexOf('admin')>=0){
             return next()
             //else redirect to main home '/'
         }else{
