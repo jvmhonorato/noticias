@@ -52,3 +52,9 @@ LOGOUT
 
 25: TRABALNAHDO COM PAPEIS
 Em models/user adicionar uma nova propriedade roles: e nela add enum restrito e admin, em seguida em mainn index.js em createInitialUser criar dois usuarios iniciais um role restrito e admin e outro user2 com restrito apenas
+
+26: criar em views/noticias/admin.ejs e crir em routes/admin.js e configura o midddleware com condiconais pra checar se tem usuario logado na sessão e se o usuario tem a role: admin
+
+27:importar admin em main index.js depois inserir a rota app.use('/admin',admin)
+
+28:

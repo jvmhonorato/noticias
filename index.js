@@ -7,6 +7,7 @@ const Noticia = require('./models/noticia')
 const restrito = require('./routes/restrito')
 const auth = require('./routes/auth')
 const pages = require('./routes/pages')
+const admin = require('./routes/admin')
 const session = require('express-session')
 const app = express()
 const path = require('path')
@@ -41,6 +42,7 @@ app.use('/', pages)
 
 app.use('/noticias', noticias)
 app.use('/restrito', restrito)
+app.use('/admin', admin)
 
 
 
@@ -48,7 +50,7 @@ app.use('/restrito', restrito)
 //CREATE USER    passa uma condicional de criação caso não tenha nenhum usuario criado ele cria um admin automaticamente
 const createInitialUser = async() => {
     const total = await User.count({username: 'victorhonorato'})
-    if(total ==0){
+    if(total ===0){
         const user = new User({
             username: "user1",
             password: "1234",
@@ -60,7 +62,7 @@ const createInitialUser = async() => {
             password: "1234",
             role:['restrito']
         })
-        await user.save()
+        await user2.save()
 
         console.log('User created')
     }else{
