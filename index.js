@@ -50,10 +50,18 @@ const createInitialUser = async() => {
     const total = await User.count({username: 'victorhonorato'})
     if(total ==0){
         const user = new User({
-            username: "victorhonorato",
-            password: "abc123"
+            username: "user1",
+            password: "1234",
+            role:['restrito', 'admin']
         })
         await user.save()
+        const user2 = new User({
+            username: "user2",
+            password: "1234",
+            role:['restrito']
+        })
+        await user.save()
+
         console.log('User created')
     }else{
         console.log('user created skipped')

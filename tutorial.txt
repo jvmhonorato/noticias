@@ -49,3 +49,6 @@ LOGOUT
 23: tranferir o general middleware pra router/auth e mudei de app pra router, em seguida no index.js deixar o "app.use(auth)" antes do app.use(noticia) e app.use(restrito) pra que abranja todos os modulos
 
 24: tranferir tambem pra router/restrito o app.use(restrito)  e mudar app pra router e remover o '/restrito pra passar pelo middleware'
+
+25: TRABALNAHDO COM PAPEIS
+Em models/user adicionar uma nova propriedade roles: e nela add enum restrito e admin, em seguida em mainn index.js em createInitialUser criar dois usuarios iniciais um role restrito e admin e outro user2 com restrito apenas
