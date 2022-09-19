@@ -4,6 +4,7 @@ const router = express.Router()
 const User = require('../models/user')
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
+const FacebookStrategy = require('passport-facebook').Strategy
 
 router.use(passport.initialize())
 router.use(passport.session())
@@ -29,6 +30,29 @@ passport.use(new LocalStrategy(async(username, password, done)=>{
       }
    }else{
       return done(null, false)
+   }
+}))
+
+//FACEBOOK
+passport.use(new FacebookStrategy({
+   clientID:'1310592479477314',
+   clientSecret:'7cfdabca938dcc2c89e5573dac3acea6',
+   callbackURL: 'http://localhost:3000/facebook/callback' ,
+   profileFields: ['id', 'displayName', 'email', 'photos']
+
+},async(accessToken, refreshToken, profile, done)=>{
+   const userDB = await User.findOne({ facebookId: profile.id})
+   //if not registered, they create e new user and save  
+   if(!userDB){
+      const user = new User({
+         name: profile.displayName,
+         facebookId: profile.id,
+         roles: ['restrito']
+      })
+      await user.save()
+      done(null, user)
+   }else{
+      done(null, userDB)
    }
 }))
 
@@ -71,5 +95,13 @@ router.post('/login',passport.authenticate('local', {
    failureRedirect:'/login',
    failureFlash: false
 }))
+router.get('/facebook', passport.authenticate('facebook'))
+router.get('/facebook/callback', 
+   passport.authenticate('facebook', {failureRedirect: '/'}),
+   (req, res)=>{
+      res.redirect('/')
+   }
+
+)
 
 module.exports = router

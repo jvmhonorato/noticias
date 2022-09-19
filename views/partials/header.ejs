@@ -46,7 +46,7 @@
               </li>
               <% } %>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= locals.user.username %></a>
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= locals.user.username || locals.user.name %></a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
               <% locals.user.roles.forEach( role => {%>
                 <a class="dropdown-item" href="/change-role/<%= role %>"><%= role %></a>

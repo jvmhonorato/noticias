@@ -80,3 +80,18 @@ Em models/user adicionar uma nova propriedade roles: e nela add enum restrito e 
 37: em auth.js importar o passport e o passaport-local strategy dfinir estrategia pra login local depois refatora o router.post com o passport authenticate
 
 38:auterar a condicional do middleware  pra req,isAuthenticated
+
+//PASSPORT FACEBOOK
+39: npm install passport-facebook
+
+40: Em auth.js importar facebookstrategy e criar um nova autenticação FACEBOOK com condicionais de criação caso não haja usuário criado integras um role: restrito padrão 
+
+41: em models/user.js tira os required de username e de password ja que o facebook passport foi implantado em seguida   add:     facebokkId: String,
+    name: String   
+42:https://developers.facebook.com/apps/​ 
+
+entrar em fabook devs: criar aplicativo/ consumidor/ dar o nome do app/ criar app/por a sennha/ login facebook/ web/  add url/ configurações/ basico copiar id do app e a chave secreta colar em auth.js
+
+OBS:criar test: clicar no canto superior esquerdo onde tem o nome do projeto e clicar em criar app de teste/ apos cirar o modo simplificado faz  o mesmo processo/configurar facebook / web/ url da app/ save/ configurações basico/ copiar id do app e chave secreta e colar em auth
+
+43: criar botão entrar com facebook em login.ejs
