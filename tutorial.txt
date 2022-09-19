@@ -67,4 +67,8 @@ Em models/user adicionar uma nova propriedade roles: e nela add enum restrito e 
 
 32: criar agora em auth.js router.get('/change-role/:role) com duas condicionais pra carregar a role queo usuário clicar ou em noticias admin ou noticias restrito
 
-33: qunado logar com user2 que tem apenas uma role restrito o dropdows irá aparecer apenar restrito sen do assim, dar pra fazer um condicional no header.ejs pr so renderizar o dropdown com as roles se houver masi de uma role 
+33: qunado logar com user2 que tem apenas uma role restrito o dropdows irá aparecer apenar restrito sen do assim, dar pra fazer um condicional no header.ejs pr so renderizar o dropdown com as roles se houver masi de uma role
+
+34: criar um condicional em auth.js caso não exista um usuaario no momento do login dar um redirect pra /login
+
+35: add o npm start no package.json 
