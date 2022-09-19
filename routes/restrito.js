@@ -7,9 +7,9 @@ const Noticia = require('../models/noticia')
 
 router.use((req, res, next)=> {
     //check if user is logged
-    if('user' in req.session){
+    if(req.isAuthenticated()){
         //check if has a 'restrito' roles  on user
-        if(req.session.user.roles.indexOf('restrito')>=0){
+        if(req.user.roles.indexOf('restrito')>=0){
             return next()
         }else{
             res.redirect('/')

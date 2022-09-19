@@ -37,10 +37,10 @@
 
 19: Em main index.js importa models/noticias e  adicionar no createInitalUser noticia publica e privada pra serem criadas automaticamente v
 
-NOTICIA PUBLICA
+//NOTICIA PUBLICA
 20: pra filtra noticias publicas e privadas em routes/noticia incluimos no find o category: public outra alternativa foi deixada comentada usando um condiconal em routes/noticia
 
-NOTICIA PRIVADA 
+//NOTICIA PRIVADA 
 21: pra filtra noticia privada em routes/restrito incluimos no find o category: private, em seguida criar em views/noticia/restri.ejs pra carregar a renderização de noticias privadas
 
 LOGOUT
@@ -72,3 +72,11 @@ Em models/user adicionar uma nova propriedade roles: e nela add enum restrito e 
 34: criar um condicional em auth.js caso não exista um usuaario no momento do login dar um redirect pra /login
 
 35: add o npm start no package.json 
+
+//PASSPORT login    
+
+36: instalar npm install passport npm install passport-local
+
+37: em auth.js importar o passport e o passaport-local strategy dfinir estrategia pra login local depois refatora o router.post com o passport authenticate
+
+38:auterar a condicional do middleware  pra req,isAuthenticated
