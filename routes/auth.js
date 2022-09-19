@@ -6,6 +6,7 @@ const User = require('../models/user')
 router.use((req, res, next)=> {
    if('user' in req.session){
        res.locals.user = req.session.user
+       res.locals.role = req.session.role
    }
    next()
 })
@@ -28,6 +29,7 @@ router.post('/login', async(req, res)=>{
  const isValid = await user.checkPassword(req.body.password)
  if(isValid){
     req.session.user=user
+    req.session.role = user.roles[0]
     res.redirect('/restrito/noticias')
  }else{
     res.redirect('/login')

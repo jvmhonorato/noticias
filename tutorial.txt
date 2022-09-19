@@ -57,4 +57,10 @@ Em models/user adicionar uma nova propriedade roles: e nela add enum restrito e 
 
 27:importar admin em main index.js depois inserir a rota app.use('/admin',admin)
 
-28:
+28:adicionar o link noticias restrita a condicional user in loacal em header.ejs
+
+29: Em auth.js  add outra requisição req.session.role = user.roles[0] se rodar o isValid o [0] é o ['restrito'], setar tambem a role no middleware
+
+30: adicionar em header.ejs um condicional dentro da condicional user in loacals uma condicional locals.role ===='restrio' se tiver locals role restrito renderizar o link pra noticias restritas e amemsa condicional pra renderizar admin se a role or admin
+
+31: pra gerar um navegador pra navegar com as roles: em header.ejs criar condicionais 
