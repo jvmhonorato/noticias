@@ -63,4 +63,8 @@ Em models/user adicionar uma nova propriedade roles: e nela add enum restrito e 
 
 30: adicionar em header.ejs um condicional dentro da condicional user in loacals uma condicional locals.role ===='restrio' se tiver locals role restrito renderizar o link pra noticias restritas e amemsa condicional pra renderizar admin se a role or admin
 
-31: pra gerar um navegador pra navegar com as roles: em header.ejs criar condicionais 
+31: pra gerar um navegador pra navegar com as roles: em header.ejs criar condicionais com forEach pra caso esteja logado pode navegar em admin e restrito
+
+32: criar agora em auth.js router.get('/change-role/:role) com duas condicionais pra carregar a role queo usuário clicar ou em noticias admin ou noticias restrito
+
+33: qunado logar com user2 que tem apenas uma role restrito o dropdows irá aparecer apenar restrito sen do assim, dar pra fazer um condicional no header.ejs pr so renderizar o dropdown com as roles se houver masi de uma role 

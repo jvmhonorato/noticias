@@ -11,6 +11,15 @@ router.use((req, res, next)=> {
    next()
 })
 
+router.get('/change-role/:role', (req, res)=> {
+   if('user' in req.session){
+   if(req.session.user.roles.indexOf(req.params.role)>=0){
+      req.session.role = req.params.role
+   }
+ }  
+   res.redirect('/')
+})
+
 
 router.get('/login', (req, res)=> {
     res.render('login')
