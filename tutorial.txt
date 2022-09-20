@@ -95,3 +95,13 @@ entrar em fabook devs: criar aplicativo/ consumidor/ dar o nome do app/ criar ap
 OBS:criar test: clicar no canto superior esquerdo onde tem o nome do projeto e clicar em criar app de teste/ apos cirar o modo simplificado faz  o mesmo processo/configurar facebook / web/ url da app/ save/ configurações basico/ copiar id do app e chave secreta e colar em auth
 
 43: criar botão entrar com facebook em login.ejs
+
+//PASSPORT GOOGLE
+44: npm install passport-google-oauth
+
+45: importar o GoogleStrategy depois criar nova authenticação com condicionasi de criação de usuario igualmente a do facebookstrategy
+em seguida criar as router.get do goolge abaixo do facebook mudndo apenas algun parãmetros em relação a do facebook OBS: colocar em models/user.js abaixo de faceobookId: String o googleId: String
+
+46: entrar em https://console.cloud.google.com/     criar novo projeto/ tela de consentimento oauth/ externo / criar / nome do app/ email/ email desenvolvedor/credenciais/ criar id do cliente oauth/ tipo web/ add url localhost/ e o redirect goolge/callback/ copiar id e senha secreta e cola na aplicação
+
+47:EM seguida ativar  google+API em API e serviços ativados
