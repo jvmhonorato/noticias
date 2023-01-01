@@ -60,7 +60,8 @@ Here are the technologies used in this project.
 
 ### 4 - After having accessed the restricted news will be released
 
-[noticia4](https://user-images.githubusercontent.com/101150943/210158848-6c7ed8d2-dfbc-47ee-9b33-0da7d40b84ee.jpg)
+![noticia4](https://user-images.githubusercontent.com/101150943/210177796-f4cd0a3f-a618-4b76-88c0-71b98c37b879.jpg)
+
 
 ### 5 - see in operation
 
