@@ -71,7 +71,7 @@ https://user-images.githubusercontent.com/101150943/210158861-f611f133-9b04-4e07
 
 The main features of the application are:
 
- - Use bcrypt auth, google-passaport and facebook-pasport to access a restrict environment in application
+ - Use bcrypt auth, google-passaport and facebook-passport to access a restrict environment in application
  
   
 
