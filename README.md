@@ -6,7 +6,7 @@
 application generate a blog news
 
 
-## Technology 
+## Technologies 
 
 Here are the technologies used in this project.
 
